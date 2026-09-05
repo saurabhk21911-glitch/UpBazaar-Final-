@@ -226,7 +226,6 @@ export default function App() {
     return matchCat && matchSearch;
   });  return (
     <View style={styles.container}>
-      <FirebaseRecaptchaVerifierModal ref={recaptchaVerifier} firebaseConfig={firebaseConfig} attemptInvisibleVerification={true} />
       {!currentUser &&!showSplash? (
         <View style={{flex:1, backgroundColor:'white', padding:20, justifyContent:'center'}}>
           <Image source={{ uri: LOGO_URL }} style={{ width: 120, height: 120, alignSelf:'center' }} resizeMode="contain" />
