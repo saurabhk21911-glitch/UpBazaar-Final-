@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "upbazaar-final-",
-    "slug": "snack-1b58c84f-4174-4d46-8bdc-bceb38b11566",
+    "name": "UpBaazar",
+    "slug": "upbaazar-sitapur",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -26,6 +26,10 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "description": "FINAL BACKUP FILE 26 SEPTEMBER 2026"
+    "extra": {
+      "eas": {
+        "projectId": "6a096424-a564-4dbe-a83d-3626e8aba7d1"
+      }
+    }
   }
 }
