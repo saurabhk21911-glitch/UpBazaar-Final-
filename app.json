@@ -12,6 +12,9 @@
       "eas": {
         "projectId": "6a096424-a564-4dbe-a83d-3626e8aba7d1"
       }
+    },
+    "cli": {
+      "appVersionSource": "local"
     }
   }
 }
