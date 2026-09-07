@@ -2,7 +2,6 @@
   "expo": {
     "name": "UpBazaar",
     "slug": "upbazaar-final",
-    "owner": "idra_vasa_group_7740",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
