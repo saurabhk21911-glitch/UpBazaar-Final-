@@ -6,7 +6,8 @@
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "android": {
-      "package": "com.upbazaar.app"
+      "package": "com.upbazaar.app",
+      "googleServicesFile": "./google-services.json"
     },
     "extra": {
       "eas": {
