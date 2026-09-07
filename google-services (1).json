@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1067850167185",
+    "project_id": "upbazaar",
+    "storage_bucket": "upbazaar.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1067850167185:android:7013914fbffe74b60b2030",
+        "android_client_info": {
+          "package_name": "com.upbazaar.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4JR3FlwCKXEJNLNYGcJkr9-fN53MvRTA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
