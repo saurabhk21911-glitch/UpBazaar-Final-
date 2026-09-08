@@ -7,9 +7,9 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "postinstall": node
-
-fix-firebase.js"
+    "postinstall": "node fix-firebase.js",
+  },
+  
   "dependencies": {
     "expo": "~52.0.46",
     "expo-status-bar": "~2.0.0",
