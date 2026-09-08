@@ -14,6 +14,7 @@
     "expo-router": "~4.0.0",
     "expo-constants": "~17.0.3",
     "expo-image-picker": "~16.0.3",
+    "expo-firebase-core": "~6.1.2",
     "expo-firebase-recaptcha": "2.3.1",
     "react": "18.3.1",
     "react-native": "0.76.5",
