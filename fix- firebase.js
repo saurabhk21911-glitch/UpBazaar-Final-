@@ -1,4 +1,4 @@
-const fs = require('fs');
+constfs = require('fs');
 const path1 = './node_modules/expo-firebase-core/src/ExponentPushToken.ts';
 const path2 = './node_modules/expo-firebase-core/build/ExponentPushToken.js';
 [ path1, path2 ].forEach(p => {
