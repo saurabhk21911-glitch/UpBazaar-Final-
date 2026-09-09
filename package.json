@@ -7,11 +7,15 @@
     "android": "expo start --android"
   },
   "dependencies": {
+    "@expo/vector-icons": "^14.0.2",
+    "@react-native-async-storage/async-storage": "1.23.1",
     "expo": "~51.0.0",
+    "expo-image-picker": "~15.0.7",
+    "expo-location": "~17.0.1",
     "expo-status-bar": "~1.12.1",
+    "firebase": "^10.12.2",
     "react": "18.2.0",
-    "react-native": "0.74.5",
-    "firebase": "^10.12.2"
+    "react-native": "0.74.5"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"
