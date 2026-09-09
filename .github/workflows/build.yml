@@ -12,17 +12,10 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
-      - name: Install deps
-        run: npm install --legacy-peer-deps
-      - name: Prebuild
-        run: npx expo prebuild --platform android --no-install
-      - name: Make APK
-        run: |
-          cd android
-          chmod +x gradlew
-         ./gradlew assembleRelease
-      - name: Upload APK
-        uses: actions/upload-artifact@v4
+      - run: npm install --legacy-peer-deps
+      - run: npx expo prebuild --platform android --no-install --clean
+      - run: cd android && chmod +x gradlew &&./gradlew assembleRelease
+      - uses: actions/upload-artifact@v4
         with:
           name: UpBazaar-APK
           path: android/app/build/outputs/apk/release/app-release.apk
