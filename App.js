@@ -21,8 +21,6 @@ function getDistanceKm(lat1, lon1, lat2, lon2) {
   const a = Math.sin(dLat/2)**2 + Math.cos(lat1*Math.PI/180)*Math.cos(lat2*Math.PI/180)*Math.sin(dLon/2)**2;
   return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
  }
-  const firebaseConfig = {
-  apiKey: "AIzaSyA9ouZ2VJJME5vTCTnrsMfYg0uWGru606I",
   authDomain: "upbazaar.firebaseapp.com",
   projectId: "upbazaar",
   storageBucket: "upbazaar.firebasestorage.app",
@@ -135,33 +133,37 @@ export default function App() {
   const [newBannerEmoji, setNewBannerEmoji] = useState('🚚');
   const [showInvoiceModal, setShowInvoiceModal] = useState(false);
   const [invoiceOrder, setInvoiceOrder] = useState(null);
-  const bannerRef = useRef(null);  const sendOtp = async () => {
+    const bannerRef = useRef(null);
+
+  const sendOtp = async () => {
     if(phone.length!== 10) return Alert.alert("10 digit mobile daalo");
     setOtpLoading(true);
     try {
-      const auth = getAuth();
-      const phoneProvider = new PhoneAuthProvider(auth);
-      const verId = await phoneProvider.verifyPhoneNumber('+91'+phone, recaptchaVerifier.current);
-      setVerificationId(verId);
-      setShowOtpScreen(true);
-      Alert.alert("OTP Bhej Diya! - "+phone);
+      const genOtp = Math.floor(1000 + Math.random() * 9000).toString();
+      const res = await fetch(`https://www.fast2sms.com/dev/bulkV2?authorization=${FAST2SMS_API_KEY}&route=otp&variables_values=${genOtp}&flash=0&numbers=${phone}`);
+      const data = await res.json();
+      if(data.return === true){
+        setVerificationId(genOtp);
+        setShowOtpScreen(true);
+        Alert.alert("OTP Bhej Diya! - "+genOtp);
+      } else {
+        Alert.alert("Error: "+JSON.stringify(data));
+      }
     } catch(e) { Alert.alert("Error: "+e.message); }
     setOtpLoading(false);
   };
+
   const confirmOtp = async () => {
-    if(otp.length!== 6) return Alert.alert("6 digit OTP daalo");
-    setOtpLoading(true);
-    try {
-      const auth = getAuth();
-      const credential = PhoneAuthProvider.credential(verificationId, otp);
-      const result = await signInWithCredential(auth, credential);
-      const userData = { phone: phone, uid: result.user.uid };
+    if(otp.length!== 4) return Alert.alert("4 digit OTP daalo");
+    if(otp === verificationId){
+      const userData = { phone: phone, uid: phone };
       setCurrentUser(userData);
       await AsyncStorage.setItem('user', JSON.stringify(userData));
       setShowOtpScreen(false);
       Alert.alert("Login Ho Gaya! 🎉");
-    } catch(e) { Alert.alert("Galat OTP: "+e.message); }
-    setOtpLoading(false);
+    } else {
+      Alert.alert("Galat OTP");
+    }
   };
   const logout = async () => { await AsyncStorage.removeItem('user'); setCurrentUser(null); setPhone(''); setOtp(''); setVerificationId(null); setShowOtpScreen(false); };
   useEffect(() => { const t = setTimeout(() => setShowSplash(false), 3000); return () => clearTimeout(t); }, []);
