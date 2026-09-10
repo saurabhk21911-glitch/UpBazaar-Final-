@@ -20,14 +20,8 @@ function getDistanceKm(lat1, lon1, lat2, lon2) {
   const dLon = (lon2-lon1) * Math.PI/180;
   const a = Math.sin(dLat/2)**2 + Math.cos(lat1*Math.PI/180)*Math.cos(lat2*Math.PI/180)*Math.sin(dLon/2)**2;
   return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
- }
-  authDomain: "upbazaar.firebaseapp.com",
-  projectId: "upbazaar",
-  storageBucket: "upbazaar.firebasestorage.app",
-  messagingSenderId: "1067850167185",
-  appId: "1:1067850167185:web:1296d411abb89ab60b2030"
-};
-if (getApps().length === 0) { initializeApp(firebaseConfig); }
+}
+const TRACK_STEPS = ['Ordered','Packed','Shipped','Out for Delivery','Delivered'];
 const CATEGORIES_DATA = [
   { id: 'Popular', name: 'Popular', icon: '⭐' },
   { id: 'Kurti, Saree & Lehenga', name: 'Kurti, Saree & Lehenga', icon: '👗' },
