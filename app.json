@@ -1,31 +1,23 @@
 {
   "expo": {
     "name": "UpBazaar",
-    "slug": "upbazaar-final",
-    "owner": "indravasagroup7740s-team",
+    "slug": "upbazaar",
     "version": "1.0.0",
-    "orientation": "portrait",
-    "icon": "./assets/icon.png",
-    "splash": {
-      "image": "./assets/splash-icon.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
     "android": {
       "package": "com.upbazaar.app",
-      "googleServicesFile": "./google-services.json",
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       }
     },
-    "extra": {
-      "eas": {
-        "projectId": "66ab9376-fe78-4fa3-942e-e5e63302501a"
-      }
-    },
-    "cli": {
-      "appVersionSource": "local"
-    }
+    "jsEngine": "hermes",
+    "newArchEnabled": false,
+    "plugins": [
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#ffffff"
+        }
+      ]
+    ]
   }
 }
