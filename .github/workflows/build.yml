@@ -1,4 +1,4 @@
-name: Build APK
+name: build
 on: [push]
 jobs:
   build:
@@ -12,9 +12,8 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
-      - run: npm install --legacy-peer-deps
-      - run: rm -rf node_modules/expo-firebase-core node_modules/expo-firebase-recaptcha
-      - run: npx expo prebuild --platform android --no-install --clean
+      - run: npm install
+      - run: npx expo prebuild --platform android --clean
       - run: cd android && chmod +x gradlew &&./gradlew assembleRelease
       - uses: actions/upload-artifact@v4
         with:
