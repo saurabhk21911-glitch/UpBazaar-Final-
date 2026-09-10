@@ -1,16 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { View, Text, TextInput, TouchableOpacity, Linking, StyleSheet, ScrollView, FlatList, Dimensions, Image, Alert } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, ScrollView, Image, Alert, Dimensions, Linking } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as ImagePicker from 'expo-image-picker';
 import * as Location from 'expo-location';
-import { initializeApp, getApps } from 'firebase/app';
-import { getAuth, PhoneAuthProvider, signInWithCredential } from 'firebase/auth';
-import { FirebaseRecaptchaVerifierModal } from 'expo-firebase-recaptcha';
+
 const { width, height } = Dimensions.get('window');
 const ADMIN_PASS = "DishuRajvanshi7740";
-const LOGO_URL = "https://i.postimg.cc/SRnbwx8q/file-000000007a98820887b7f176e5d5470c.png";
-const TRACK_STEPS = ['Ordered','Packed','Shipped','Out for Delivery','Delivered'];
+const LOGO_URL = "https://i.postimg.cc/SRn...";
+const FAST2SMS_API_KEY = "r96zJI7wWjA8DsEmSvL5blRKaCkUquxBtpFQNOfXPM104HecgYiEj6U52P3ZpkAxoDBOcRv9qrLmVISz";
 
 // --- 15KM LOCK CONSTANTS ---
 const SITAPUR_LAT = 26.9194;
