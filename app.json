@@ -11,7 +11,7 @@
       "backgroundColor": "#FFFFFF"
     },
     "android": {
-      "package": "com.upbazaar.final",
+      "package": "com.upbazaar.app",
       "adaptiveIcon": {
         "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#FFFFFF"
